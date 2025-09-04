@@ -14,10 +14,11 @@ export default function RootLayout() {
           <Stack.Screen name="post-ad" />
           <Stack.Screen name="account" />
           <Stack.Screen name="search" />
-          <Stack.Screen name="my-posts" /> {/* Updated route */}
+          <Stack.Screen name="my-posts" />
           <Stack.Screen name="login" />
           <Stack.Screen name="signup" />
           <Stack.Screen name="post/[id]" />
+          <Stack.Screen name="edit-post/[id]" />
         </Stack>
       </View>
       <Footer />
