@@ -1,0 +1,23 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.5.2
+2 info using node@v22.18.0
+3 silly config load:file:C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\JIMUTHA\AppData\Local\Temp\.create-expo-app\template-cache\.npmrc
+5 silly config load:file:C:\Users\JIMUTHA\.npmrc
+6 silly config load:file:C:\Users\JIMUTHA\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm pack expo-template-default@latest
+8 verbose argv "pack" "expo-template-default@latest" "--dry-run" "--json"
+9 verbose logfile logs-max:10 dir:C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-03T14_57_59_898Z-
+10 verbose logfile C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-03T14_57_59_898Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET 200 https://registry.npmjs.org/expo-template-default 1030ms (cache miss)
+13 http cache https://registry.npmjs.org/expo-template-default 18ms (cache hit)
+14 http cache https://registry.npmjs.org/expo-template-default/-/expo-template-default-53.0.40.tgz 0ms (cache hit)
+15 silly tarball no local data for https://registry.npmjs.org/expo-template-default/-/expo-template-default-53.0.40.tgz. Extracting by manifest.
+16 http fetch GET 200 https://registry.npmjs.org/expo-template-default/-/expo-template-default-53.0.40.tgz 841ms (cache miss)
+17 verbose cwd C:\Users\JIMUTHA\AppData\Local\Temp\.create-expo-app\template-cache
+18 verbose os Windows_NT 10.0.26100
+19 verbose node v22.18.0
+20 verbose npm  v11.5.2
+21 verbose exit 0
+22 info ok

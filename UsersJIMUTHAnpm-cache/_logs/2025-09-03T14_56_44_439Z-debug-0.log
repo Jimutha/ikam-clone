@@ -1,0 +1,35 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.5.2
+2 info using node@v22.18.0
+3 silly config load:file:C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\.npmrc
+5 silly config load:file:C:\Users\JIMUTHA\.npmrc
+6 silly config load:file:C:\Users\JIMUTHA\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm exec create-expo-app@latest
+8 verbose argv "exec" "--" "create-expo-app@latest "
+9 verbose logfile logs-max:10 dir:C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-03T14_56_44_439Z-
+10 verbose logfile C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-03T14_56_44_439Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 http fetch GET 200 https://registry.npmjs.org/create-expo-app 1090ms (cache miss)
+14 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+15 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+16 silly idealTree buildDeps
+17 silly fetch manifest create-expo-app@3.5.3
+18 silly packumentCache full:https://registry.npmjs.org/create-expo-app cache-miss
+19 http fetch GET 200 https://registry.npmjs.org/create-expo-app 774ms (cache miss)
+20 silly packumentCache full:https://registry.npmjs.org/create-expo-app set size:undefined disposed:false
+21 silly placeDep ROOT create-expo-app@3.5.3 OK for:  want: 3.5.3
+22 silly reify moves {}
+23 silly audit bulk request { 'create-expo-app': [ '3.5.3' ] }
+24 http cache create-expo-app@https://registry.npmjs.org/create-expo-app/-/create-expo-app-3.5.3.tgz 0ms (cache hit)
+25 silly tarball no local data for create-expo-app@https://registry.npmjs.org/create-expo-app/-/create-expo-app-3.5.3.tgz. Extracting by manifest.
+26 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 480ms
+27 silly audit report {}
+28 http fetch GET 200 https://registry.npmjs.org/create-expo-app/-/create-expo-app-3.5.3.tgz 1618ms (cache miss)
+29 verbose cwd C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone
+30 verbose os Windows_NT 10.0.26100
+31 verbose node v22.18.0
+32 verbose npm  v11.5.2
+33 verbose exit 0
+34 info ok

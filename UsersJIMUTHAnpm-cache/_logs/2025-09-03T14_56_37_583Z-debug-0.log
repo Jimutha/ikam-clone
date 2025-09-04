@@ -1,0 +1,29 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.5.2
+2 info using node@v22.18.0
+3 silly config load:file:C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\.npmrc
+5 silly config load:file:C:\Users\JIMUTHA\.npmrc
+6 silly config load:file:C:\Users\JIMUTHA\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm exec create-expo-app@latest .
+8 verbose argv "exec" "--" "create-expo-app@latest ."
+9 verbose logfile logs-max:10 dir:C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-03T14_56_37_583Z-
+10 verbose logfile C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-03T14_56_37_583Z-debug-0.log
+11 silly logfile done cleaning log files
+12 verbose stack Error: Invalid tag name "latest ." of package "create-expo-app@latest .": Tags may not have any characters that encodeURIComponent encodes.
+12 verbose stack     at invalidTagName (C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\node_modules\npm-package-arg\lib\npa.js:143:15)
+12 verbose stack     at fromRegistry (C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\node_modules\npm-package-arg\lib\npa.js:471:13)
+12 verbose stack     at resolve (C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\node_modules\npm-package-arg\lib\npa.js:114:12)
+12 verbose stack     at npa (C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\node_modules\npm-package-arg\lib\npa.js:56:10)
+12 verbose stack     at exec (C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\node_modules\libnpmexec\lib\index.js:171:18)
+12 verbose stack     at async Npm.exec (C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\lib\npm.js:208:9)
+12 verbose stack     at async module.exports (C:\Users\JIMUTHA\AppData\Roaming\npm\node_modules\npm\lib\cli\entry.js:67:5)
+13 error code EINVALIDTAGNAME
+14 error Invalid tag name "latest ." of package "create-expo-app@latest .": Tags may not have any characters that encodeURIComponent encodes.
+15 verbose cwd C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone
+16 verbose os Windows_NT 10.0.26100
+17 verbose node v22.18.0
+18 verbose npm  v11.5.2
+19 verbose exit 1
+20 verbose code 1
+21 error A complete log of this run can be found in: C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-03T14_56_37_583Z-debug-0.log
