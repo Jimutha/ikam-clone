@@ -7,13 +7,7 @@
 6 silly config load:file:C:\Users\JIMUTHA\AppData\Roaming\npm\etc\npmrc
 7 verbose title npm exec expo
 8 verbose argv "exec" "--" "expo"
-9 verbose logfile logs-max:10 dir:C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\ikman-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-04T10_52_48_843Z-
-10 verbose logfile C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\ikman-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-04T10_52_48_843Z-debug-0.log
+9 verbose logfile logs-max:10 dir:C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\ikman-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-04T12_26_26_643Z-
+10 verbose logfile C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\ikman-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-04T12_26_26_643Z-debug-0.log
 11 silly logfile start cleaning logs, removing 1 files
 12 silly logfile done cleaning log files
-13 verbose cwd C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\ikman-clone
-14 verbose os Windows_NT 10.0.26100
-15 verbose node v22.18.0
-16 verbose npm  v11.5.2
-17 verbose exit 0
-18 info ok
