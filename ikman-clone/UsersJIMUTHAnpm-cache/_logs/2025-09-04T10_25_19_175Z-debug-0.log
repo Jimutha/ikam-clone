@@ -7,13 +7,12 @@
 6 silly config load:file:C:\Users\JIMUTHA\AppData\Roaming\npm\etc\npmrc
 7 verbose title npm exec expo
 8 verbose argv "exec" "--" "expo"
-9 verbose logfile logs-max:10 dir:C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\ikman-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-04T09_27_20_681Z-
-10 verbose logfile C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\ikman-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-04T09_27_20_681Z-debug-0.log
+9 verbose logfile logs-max:10 dir:C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\ikman-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-04T10_25_19_175Z-
+10 verbose logfile C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\ikman-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-04T10_25_19_175Z-debug-0.log
 11 silly logfile done cleaning log files
 12 verbose cwd C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\ikman-clone
 13 verbose os Windows_NT 10.0.26100
 14 verbose node v22.18.0
 15 verbose npm  v11.5.2
-16 verbose exit 1
-17 verbose code 1
-18 error A complete log of this run can be found in: C:\Users\JIMUTHA\Desktop\GamageRec\ikman-clone\ikam-clone\ikman-clone\UsersJIMUTHAnpm-cache\_logs\2025-09-04T09_27_20_681Z-debug-0.log
+16 verbose exit 0
+17 info ok

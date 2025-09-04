@@ -8,14 +8,17 @@ import {
   Image,
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
+import { LinearGradient } from "expo-linear-gradient";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import { Ad } from "./types";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Home() {
   const router = useRouter();
   const [posts, setPosts] = useState<Ad[]>([]);
   const [selectedLocation, setSelectedLocation] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [filteredPosts, setFilteredPosts] = useState<Ad[]>([]);
 
   useEffect(() => {
@@ -23,7 +26,6 @@ export default function Home() {
       const storedPosts = await AsyncStorage.getItem("ads");
       if (storedPosts) {
         const parsedPosts: Ad[] = JSON.parse(storedPosts);
-        // Sort posts by timestamp in descending order (latest first)
         const sortedPosts = parsedPosts.sort(
           (a, b) =>
             new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
@@ -35,19 +37,29 @@ export default function Home() {
     loadPosts();
   }, []);
 
-  const handleFilter = (location: string) => {
-    setSelectedLocation(location);
-    if (location === "") {
-      setFilteredPosts(posts);
-    } else {
-      setFilteredPosts(posts.filter((post) => post.location === location));
+  const handleFilter = () => {
+    let updatedPosts = posts;
+    if (selectedLocation) {
+      updatedPosts = updatedPosts.filter(
+        (post) => post.location === selectedLocation
+      );
     }
+    if (selectedCategory) {
+      updatedPosts = updatedPosts.filter(
+        (post) => post.category.toLowerCase() === selectedCategory.toLowerCase()
+      );
+    }
+    setFilteredPosts(updatedPosts);
   };
+
+  useEffect(() => {
+    handleFilter();
+  }, [selectedLocation, selectedCategory, posts]);
 
   const renderPost = ({ item }: { item: Ad }) => (
     <TouchableOpacity
       style={styles.postItem}
-      onPress={() => router.push(`/post/${item.timestamp}`)} // Use timestamp as unique ID
+      onPress={() => router.push(`/post/${item.timestamp}`)}
     >
       <Image
         source={{ uri: item.thumbnail || "https://via.placeholder.com/100" }}
@@ -67,69 +79,111 @@ export default function Home() {
     <View style={styles.container}>
       <Text style={styles.heading}>Welcome to ikman.lk Clone</Text>
 
-      {/* Location Filter */}
-      <Picker
-        selectedValue={selectedLocation}
-        onValueChange={handleFilter}
-        style={styles.picker}
-      >
-        <Picker.Item label="All Locations" value="" />
-        <Picker.Item label="Sri Lanka" value="Sri Lanka" />
-        <Picker.Item label="India" value="India" />
-        <Picker.Item label="United States" value="United States" />
-        <Picker.Item label="United Kingdom" value="United Kingdom" />
-        <Picker.Item label="Australia" value="Australia" />
-        <Picker.Item label="Canada" value="Canada" />
-        <Picker.Item label="Germany" value="Germany" />
-        <Picker.Item label="France" value="France" />
-        <Picker.Item label="Japan" value="Japan" />
-        <Picker.Item label="China" value="China" />
-        <Picker.Item label="Brazil" value="Brazil" />
-        <Picker.Item label="Russia" value="Russia" />
-        <Picker.Item label="South Africa" value="South Africa" />
-        <Picker.Item label="Mexico" value="Mexico" />
-        <Picker.Item label="Italy" value="Italy" />
-        <Picker.Item label="Spain" value="Spain" />
-        <Picker.Item label="Netherlands" value="Netherlands" />
-        <Picker.Item label="Sweden" value="Sweden" />
-        <Picker.Item label="Norway" value="Norway" />
-        <Picker.Item label="Denmark" value="Denmark" />
-        <Picker.Item label="Finland" value="Finland" />
-        <Picker.Item label="Switzerland" value="Switzerland" />
-        <Picker.Item label="Austria" value="Austria" />
-        <Picker.Item label="Belgium" value="Belgium" />
-        <Picker.Item label="Poland" value="Poland" />
-        <Picker.Item label="Ukraine" value="Ukraine" />
-        <Picker.Item label="Turkey" value="Turkey" />
-        <Picker.Item label="Egypt" value="Egypt" />
-        <Picker.Item label="Nigeria" value="Nigeria" />
-        <Picker.Item label="Kenya" value="Kenya" />
-        <Picker.Item label="South Korea" value="South Korea" />
-        <Picker.Item label="Thailand" value="Thailand" />
-        <Picker.Item label="Vietnam" value="Vietnam" />
-        <Picker.Item label="Indonesia" value="Indonesia" />
-        <Picker.Item label="Malaysia" value="Malaysia" />
-        <Picker.Item label="Singapore" value="Singapore" />
-        <Picker.Item label="Philippines" value="Philippines" />
-        <Picker.Item label="New Zealand" value="New Zealand" />
-        <Picker.Item label="Argentina" value="Argentina" />
-        <Picker.Item label="Chile" value="Chile" />
-        <Picker.Item label="Colombia" value="Colombia" />
-        <Picker.Item label="Peru" value="Peru" />
-        <Picker.Item label="Saudi Arabia" value="Saudi Arabia" />
-        <Picker.Item
-          label="United Arab Emirates"
-          value="United Arab Emirates"
-        />
-        <Picker.Item label="Qatar" value="Qatar" />
-        <Picker.Item label="Pakistan" value="Pakistan" />
-        <Picker.Item label="Bangladesh" value="Bangladesh" />
-        <Picker.Item label="Afghanistan" value="Afghanistan" />
-        <Picker.Item label="Iraq" value="Iraq" />
-        <Picker.Item label="Iran" value="Iran" />
-        <Picker.Item label="Israel" value="Israel" />
-        <Picker.Item label="Portugal" value="Portugal" />
-      </Picker>
+      {/* Location and Category Filters on the same line with attractive design */}
+      <View style={styles.filterContainer}>
+        <LinearGradient
+          colors={["#4CAF50", "#81C784"]}
+          style={styles.filterWrapper}
+        >
+          <Ionicons
+            name="location-outline"
+            size={20}
+            color="#fff"
+            style={styles.icon}
+          />
+          <Picker
+            selectedValue={selectedLocation}
+            onValueChange={(value: React.SetStateAction<string>) =>
+              setSelectedLocation(value)
+            }
+            style={styles.picker}
+            dropdownIconColor="#fff"
+          >
+            <Picker.Item label="All Locations" value="" />
+            <Picker.Item label="Sri Lanka" value="Sri Lanka" />
+            <Picker.Item label="India" value="India" />
+            <Picker.Item label="United States" value="United States" />
+            <Picker.Item label="United Kingdom" value="United Kingdom" />
+            <Picker.Item label="Australia" value="Australia" />
+            <Picker.Item label="Canada" value="Canada" />
+            <Picker.Item label="Germany" value="Germany" />
+            <Picker.Item label="France" value="France" />
+            <Picker.Item label="Japan" value="Japan" />
+            <Picker.Item label="China" value="China" />
+            <Picker.Item label="Brazil" value="Brazil" />
+            <Picker.Item label="Russia" value="Russia" />
+            <Picker.Item label="South Africa" value="South Africa" />
+            <Picker.Item label="Mexico" value="Mexico" />
+            <Picker.Item label="Italy" value="Italy" />
+            <Picker.Item label="Spain" value="Spain" />
+            <Picker.Item label="Netherlands" value="Netherlands" />
+            <Picker.Item label="Sweden" value="Sweden" />
+            <Picker.Item label="Norway" value="Norway" />
+            <Picker.Item label="Denmark" value="Denmark" />
+            <Picker.Item label="Finland" value="Finland" />
+            <Picker.Item label="Switzerland" value="Switzerland" />
+            <Picker.Item label="Austria" value="Austria" />
+            <Picker.Item label="Belgium" value="Belgium" />
+            <Picker.Item label="Poland" value="Poland" />
+            <Picker.Item label="Ukraine" value="Ukraine" />
+            <Picker.Item label="Turkey" value="Turkey" />
+            <Picker.Item label="Egypt" value="Egypt" />
+            <Picker.Item label="Nigeria" value="Nigeria" />
+            <Picker.Item label="Kenya" value="Kenya" />
+            <Picker.Item label="South Korea" value="South Korea" />
+            <Picker.Item label="Thailand" value="Thailand" />
+            <Picker.Item label="Vietnam" value="Vietnam" />
+            <Picker.Item label="Indonesia" value="Indonesia" />
+            <Picker.Item label="Malaysia" value="Malaysia" />
+            <Picker.Item label="Singapore" value="Singapore" />
+            <Picker.Item label="Philippines" value="Philippines" />
+            <Picker.Item label="New Zealand" value="New Zealand" />
+            <Picker.Item label="Argentina" value="Argentina" />
+            <Picker.Item label="Chile" value="Chile" />
+            <Picker.Item label="Colombia" value="Colombia" />
+            <Picker.Item label="Peru" value="Peru" />
+            <Picker.Item label="Saudi Arabia" value="Saudi Arabia" />
+            <Picker.Item
+              label="United Arab Emirates"
+              value="United Arab Emirates"
+            />
+            <Picker.Item label="Qatar" value="Qatar" />
+            <Picker.Item label="Pakistan" value="Pakistan" />
+            <Picker.Item label="Bangladesh" value="Bangladesh" />
+            <Picker.Item label="Afghanistan" value="Afghanistan" />
+            <Picker.Item label="Iraq" value="Iraq" />
+            <Picker.Item label="Iran" value="Iran" />
+            <Picker.Item label="Israel" value="Israel" />
+            <Picker.Item label="Portugal" value="Portugal" />
+          </Picker>
+        </LinearGradient>
+        <LinearGradient
+          colors={["#2196F3", "#42A5F5"]}
+          style={styles.filterWrapper}
+        >
+          <Ionicons
+            name="grid-outline"
+            size={20}
+            color="#fff"
+            style={styles.icon}
+          />
+          <Picker
+            selectedValue={selectedCategory}
+            onValueChange={(value: React.SetStateAction<string>) =>
+              setSelectedCategory(value)
+            }
+            style={styles.picker}
+            dropdownIconColor="#fff"
+          >
+            <Picker.Item label="All Categories" value="" />
+            <Picker.Item label="Vehicles" value="vehicles" />
+            <Picker.Item label="Property" value="property" />
+            <Picker.Item label="Electronics" value="electronics" />
+            <Picker.Item label="Jobs" value="jobs" />
+            <Picker.Item label="Services" value="services" />
+          </Picker>
+        </LinearGradient>
+      </View>
 
       {/* Recent Posts */}
       <Text style={styles.recentPostsHeading}>Recent Posts</Text>
@@ -160,13 +214,34 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: "center",
   },
-  picker: {
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 8,
+  filterContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginBottom: 15,
-    backgroundColor: "#FAFAFA",
-    padding: 10,
+  },
+  filterWrapper: {
+    flex: 1.5, // Increased from 1 to 1.5 for wider boxes
+    borderRadius: 12,
+    overflow: "hidden",
+    marginRight: 10,
+    elevation: 4,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  picker: {
+    flex: 1,
+    paddingHorizontal: 15, // Increased padding for better content spacing
+    paddingVertical: 10,
+    color: "#fff",
+    backgroundColor: "transparent",
+  },
+  icon: {
+    position: "absolute",
+    left: 20, // Adjusted to match increased padding
+    top: 1,
+    zIndex: 1,
   },
   recentPostsHeading: {
     fontSize: 20,
@@ -220,6 +295,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#666",
     textAlign: "center",
-    marginTop: 20,
+    marginRight: 20,
   },
 });
