@@ -47,7 +47,7 @@ export default function Home() {
   const renderPost = ({ item }: { item: Ad }) => (
     <TouchableOpacity
       style={styles.postItem}
-      onPress={() => router.push(`/post/${item.timestamp}` as any)} // Use timestamp as unique ID
+      onPress={() => router.push(`/post/${item.timestamp}`)} // Use timestamp as unique ID
     >
       <Image
         source={{ uri: item.thumbnail || "https://via.placeholder.com/100" }}

@@ -66,21 +66,21 @@ export default function Footer() {
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={[styles.tab, currentRoute === "/categories" && styles.activeTab]}
-        onPress={() => navigateTo("/categories")}
+        style={[styles.tab, currentRoute === "/my-posts" && styles.activeTab]}
+        onPress={() => navigateTo("/my-posts")}
       >
         <Ionicons
-          name="grid"
+          name="list"
           size={20}
-          color={currentRoute === "/categories" ? "#2E8B57" : "#666"}
+          color={currentRoute === "/my-posts" ? "#2E8B57" : "#666"}
         />
         <Text
           style={[
             styles.tabText,
-            currentRoute === "/categories" && styles.activeText,
+            currentRoute === "/my-posts" && styles.activeText,
           ]}
         >
-          Categories
+          My Posts
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
